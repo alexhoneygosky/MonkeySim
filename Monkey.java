@@ -16,7 +16,7 @@ public class Monkey {
      */
 
     public int getMonkeyNum() {
-    return _thisMonkeyNum;
+        return _thisMonkeyNum;
     }
 
     /**
@@ -25,11 +25,11 @@ public class Monkey {
      */
 
     public int getId() throws NoIdException {
-    if (_id < 0) {
-        throw new NoIdException();
-    } else {
-        return _id;
-    }
+        if (_id < 0) {
+            throw new NoIdException();
+        } else {
+            return _id;
+        }
     }
 
     /**
@@ -38,11 +38,11 @@ public class Monkey {
      */
 
     public int nextMonkey() {
-    if (_thisMonkeyNum % 2 == 0) {
-        return _thisMonkeyNum / 2;
-    } else {
-        return (_thisMonkeyNum * 3) + 1;
-    }
+        if (_thisMonkeyNum % 2 == 0) {
+            return _thisMonkeyNum / 2;
+        } else {
+            return (_thisMonkeyNum * 3) + 1;
+        }
     }
 
     /**
@@ -51,7 +51,7 @@ public class Monkey {
      */
 
     public boolean hasBanana() {
-    return _b != null;
+        return _b != null;
     }
 
     /**
@@ -60,7 +60,7 @@ public class Monkey {
      */
 
     public void throwBananaTo(Banana b) {
-    _b = b;
+        _b = b;
     }
 
     /**
@@ -69,9 +69,9 @@ public class Monkey {
      */
 
     public Banana throwBananaFrom() {
-    Banana toReturn = _b;
-    _b = null;
-    return toReturn;
+        Banana toReturn = _b;
+        _b = null;
+        return toReturn;
     }
 
     /**
@@ -93,9 +93,9 @@ public class Monkey {
      */
 
     public Monkey() {
-    _thisMonkeyNum = _monkeyNum;
-    _monkeyNum++;
-    _id = generateId(_thisMonkeyNum);
+        _thisMonkeyNum = _monkeyNum;
+        _monkeyNum++;
+        _id = generateId(_thisMonkeyNum);
     }
 
 }
