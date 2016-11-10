@@ -60,10 +60,10 @@ public class MonkeySim {
         int r = 17;
         for (int j = x; j >= 0; j--) {
             if (ml.get(j).getMonkeyNum() == 1 && f > 0) {
-            f--;
-            j = x;
+                f--;
+                j = x;
             } else if (ml.get(j).getMonkeyNum() == 1 && f == 0) {
-            return ml.get(j);
+                return ml.get(j);
             }
         }
 
