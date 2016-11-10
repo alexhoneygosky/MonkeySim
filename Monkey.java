@@ -85,8 +85,7 @@ public class Monkey {
      */
     
     public int generateId(int n) {
-	int toReturn = 223492 + n;
-	return toReturn;
+	    return 223492 + n;
     }
 
     /**
