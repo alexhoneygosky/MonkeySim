@@ -22,7 +22,30 @@ public class TestMonkey {
     }
 
     @Test
-    public void testGenerateId() {
-        assertEquals(true, true);
-    }          
+    public void testGenerateIdCase1() {
+        int offset = 223492;
+        int n = 1;
+        int expected = n + offset;
+        int observed = new Monkey().generateId(n);
+        assertEquals(observed, expected);
+    }
+
+    @Test
+    public void testGenerateIdCase2() {
+        int offset = 223492;
+        int n = 484;
+        int expected = n + offset;
+        int observed = new Monkey().generateId(n);
+        assertEquals(observed, expected);
+    }
+
+    @Test
+    public void testGenerateIdCase3() {
+        int offset = 223492;
+        int n = 1300;
+        int expected = n + offset;
+        int observed = new Monkey().generateId(n);
+        assertEquals(observed, expected);
+    }
+
 }
