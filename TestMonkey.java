@@ -14,13 +14,7 @@ import org.mockito.MockitoAnnotations;
 
 
 public class TestMonkey {
-    //@Mock
-
-    @Before
-    public void setUp() throws Exception {
-
-    }
-
+    //This test checks to see that the corrected generated id is returned when a valid int is passed in
     @Test
     public void testGenerateIdCase1() {
         int offset = 223492;
@@ -30,6 +24,7 @@ public class TestMonkey {
         assertEquals(observed, expected);
     }
 
+    //This test checks to see that the corrected generated id is returned when a valid, bigger int is passed in
     @Test
     public void testGenerateIdCase2() {
         int offset = 223492;
@@ -39,6 +34,7 @@ public class TestMonkey {
         assertEquals(observed, expected);
     }
 
+    //This test checks to see that the corrected generated id is returned when a valid, even bigger int is passed in
     @Test
     public void testGenerateIdCase3() {
         int offset = 223492;

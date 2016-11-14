@@ -14,13 +14,7 @@ import org.mockito.MockitoAnnotations;
 
 
 public class TestMonkeySim {
-    //@Mock
-
-    @Before
-    public void setUp() throws Exception {
-
-    }
-
+    //This test checks to make sure 3 valid strings with correct use of the program multiple by 3 and plus 1 algorithm can be formatted 
     @Test
     public void testStringifyResultsCase1() {
         String expected = "//Round 1: Threw banana from Monkey (#5 / ID 223497) to Monkey (#16 / ID 223508)";
@@ -39,6 +33,7 @@ public class TestMonkeySim {
         assertEquals(observed, expected);
     }
 
+    //This test checks to make sure 3 valid strings with correct use of the program even/divide algorithm can be formatted (continuation of previous test)
     @Test
     public void testStringifyResultsCase2() {
         String expected = "//Round 2: Threw banana from Monkey (#16 / ID 223508) to Monkey (#8 / ID 223500)";
@@ -57,6 +52,7 @@ public class TestMonkeySim {
         assertEquals(observed, expected);
     }
 
+    //This test checks to make sure 3 valid strings with correct use of the program even/divide algorithm can be formatted (continuation of previous test)
     @Test
     public void testStringifyResultsCase3() {
         String expected = "//Round 3: Threw banana from Monkey (#8 / ID 223500) to Monkey (#4 / ID 223496)";
@@ -75,6 +71,7 @@ public class TestMonkeySim {
         assertEquals(observed, expected);
     }
 
+    //This tests checks to see if a null pointer is thrown if null is passed into the get first monkey function
     @Test
     public void testGetFirstMonkeyNull() {
         try {
@@ -85,7 +82,7 @@ public class TestMonkeySim {
         }
     }
 
-
+    //This test checks to see if there is a null value in the slot where the first monkey is (fails after performance changes)
     @Test
     public void testGetFirstMonkeyEmpty() {
         List<Monkey> ms = new LinkedList<>();
@@ -94,6 +91,8 @@ public class TestMonkeySim {
         assertEquals(observed, expected);
     }
 
+    //This test checks to see if the first monkey in the list is returned with one monkey in the monkey list (fails after performance changes)
+    //The test should fail after the performance changes because the monkey in the zero position is not a valid monkey when the program is run
     @Test
     public void testGetFirstMonkeySingleton() {
         Monkey m1 = Mockito.mock(Monkey.class);
@@ -106,6 +105,7 @@ public class TestMonkeySim {
         assertEquals(observed, expected);
     }
 
+    //This test checks to see if the first monkey in the list is returned with two monkeys in the monkey list
     @Test
     public void testGetFirstMonkeyTwoElements() {
         Monkey m1 = Mockito.mock(Monkey.class);
@@ -116,11 +116,12 @@ public class TestMonkeySim {
         ms.add(m1);
         ms.add(m2);
 
-        Monkey expected = null;
+        Monkey expected = m2;
         Monkey observed = MonkeySim.getFirstMonkey(ms);
         assertEquals(observed, expected);
     }
 
+    //This test checks to see if the first monkey in the list is returned with three monkeys in the monkey list
     @Test
     public void testGetFirstMonkeyThreeElements() {
         Monkey m1 = Mockito.mock(Monkey.class);
